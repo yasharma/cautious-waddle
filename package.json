@@ -1,0 +1,20 @@
+{
+  "name": "mimic-trader",
+  "version": "1.0.0",
+  "description": "mimic trading",
+  "main": "index.html",
+  "scripts": {},
+  "author": "Yash Sharma",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.4.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-jshint": "^2.0.4",
+    "gulp-uglify": "^3.0.0",
+    "jshint": "^2.9.4",
+    "jshint-stylish": "^2.2.1",
+    "pump": "^1.0.2"
+  },
+  "dependencies": {}
+}

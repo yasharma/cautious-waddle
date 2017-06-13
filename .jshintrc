@@ -1,0 +1,16 @@
+{
+    "node": true,
+    "esversion": 6,
+    "globals": {
+        "$": false,
+        "mimicTrading": false,
+        "moment" : false,
+        "window": false,
+        "App":false,
+        "Layout": false,
+        "QuickSidebar": false,
+        "Demo":false,
+        "$state": false
+    },
+    "predef": ["angular"]
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mimicTrade">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Angular Material style sheet -->
+	<title data-ng-bind="'Mimic Trade | ' + $state.current.data.pageTitle"></title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body ng-cloak>
+	<header ng-include="'user/partials/header.html'"></header>
+
+	<div class="container">
+		<div class="custom-alerts alert alert-danger fade in" ng-if="server_error_message">
+		    <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+		    {{server_error_message}}
+		</div>
+		<div ui-view></div>
+	</div>
+	<!-- Jquery & Bootstrap -->
+	<script src="assets/global/plugins/jquery.min.js"></script>
+	<script src="assets/global/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<!-- Angular Material requires Angular.js Libraries -->
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+	<script src="bower_components/angular-aria/angular-aria.min.js"></script>
+	<script src="bower_components/angular-messages/angular-messages.min.js"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script src="bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+	<script src="assets/global/plugins/angularjs/plugins/ui-bootstrap-tpls.min.js"></script>
+
+	<!-- Angular Material Library -->
+	<script src="bower_components/angular-material/angular-material.min.js"></script>
+	<script src="user/app.js"></script>
+	<script src="user/core/config.js"></script>
+	<script src="user/core/routes.js"></script>
+	<script src="user/factories/rest-service.js"></script>
+	<script src="user/login/loginSvr.js"></script>
+	<script src="user/home/homeCtrl.js"></script>
+	<script src="user/login/loginCtrl.js"></script>
+	<script src="user/signup/signupCtrl.js"></script>
+</body>
+</html>

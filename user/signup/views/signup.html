@@ -1,0 +1,48 @@
+<div class="row">
+	<div class="col-md-6" ng-include="'user/partials/login_signup_verbige.html'"></div>
+	<div class="col-md-6">
+		<form name="signupForm" ng-submit="signup(signupForm.$valid)" novalidate>
+			<md-content class="md-no-momentum">
+				<h1 class="page-header text-center">Begin Account Opening</h1>
+			    <md-input-container class="md-icon-float md-block">
+			      	<label>Email</label>
+			      	<md-icon class="gray">email</md-icon>
+			      	<input type="email" ng-model="user.email" name="email" ng-pattern="/^([a-zA-Z0-9_\.\-])+\@(([A-Za-z0-9\-])+\.)+([a-zA-Z]{2,3})+$/" required>
+			      	<div ng-messages="signupForm.email.$error">
+			      	    <div ng-message="required">Email is required</div>
+			      	    <div ng-message="pattern">Enter valid email address</div>
+			      	</div>
+			    </md-input-container>
+			    <md-input-container class="md-icon-float md-block">
+			      	<label>Password</label>
+			      	<md-icon class="gray">lock</md-icon>
+			      	<input type="password" ng-model="user.password" name="password" ng-pattern="/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/" required>
+			      	<md-icon uib-popover="I appeared on mouse enter!" popover-trigger="'mouseenter'" class="gray">help</md-icon>
+			      	<div ng-messages="signupForm.password.$error">
+			      	    <div ng-message="required">Password is required</div>
+			      	    <div ng-message="pattern">Password must be at least 8 characters long and should contain at least one digit, one lower case and one upper case character</div>
+			      	</div>
+			    </md-input-container>
+			    <md-input-container class="md-icon-float md-block">
+			        <label>Type</label>
+			        <md-icon class="gray">person</md-icon>
+			        <md-select name="type" ng-model="user.type" required>
+			            <md-option value="trader">Trader</md-option>
+			            <md-option value="customer">Customer</md-option>
+			        </md-select>
+			        <div ng-messages="signupForm.password.$error">
+			            <div ng-message="required">User type is required</div>
+			        </div>
+			    </md-input-container>
+			</md-content>
+			<div>
+				<md-button ng-disabled="isLoading" type="submit" class="md-primary md-raised btn-block" aria-label="Continue">
+					<span ng-if="!isLoading">Continue</span>
+					<div ng-if="isLoading" layout="row" layout-sm="column" layout-align="space-around">
+						<md-progress-circular class="md-hue-2" md-diameter="20px" md-mode="indeterminate"></md-progress-circular>
+					</div>
+				</md-button>
+			<div>	
+		</form>
+	</div>
+</div>	
